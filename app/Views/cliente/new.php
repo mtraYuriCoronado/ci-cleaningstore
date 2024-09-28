@@ -47,30 +47,31 @@
 
 <body>
     <h1>Crear nuevo cliente</h1>
+    <?= $validation->listErrors(); ?>
     <form action="<?= base_url() ?>cliente" method="post">
         <div>
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre">
+            <input type="text" name="nombre" value="Yeyo">
         </div>
         <div>
             <label for="rfc">RFC:</label>
-            <input type="text" name="rfc">
+            <input type="text" name="rfc" value="YEYE950214YV5">
         </div>
         <div>
             <label for="direccion">Dirección:</label>
-            <input type="text" name="direccion">
+            <input type="text" name="direccion" value="Simon Bolivear 25">
         </div>
         <div>
             <label for="telefono">Teléfono:</label>
-            <input type="text" name="telefono">
+            <input type="text" name="telefono" value="8345689475">
         </div>
         <div>
             <label for="email">Email:</label>
-            <input type="email" name="email">
+            <input type="email" name="email" value="yeyo@gmail.com">
         </div>
         <div>
             <label for="contacto">Nombre del contacto:</label>
-            <input type="text" name="contacto">
+            <input type="text" name="contacto" value="andrea">
         </div>
         <div>
             <input type="submit" value="Enviar">

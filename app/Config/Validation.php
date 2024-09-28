@@ -41,4 +41,13 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
     // Rules
     // --------------------------------------------------------------------
+
+    public $cliente = [
+        'nombre' => 'required|min_length[3]|max_length[100]',
+        'rfc' => 'required|min_length[12]|max_length[13]',
+        'direccion' => 'required|min_length[3]|max_length[500]',
+        'telefono' => 'required|min_length[10]|max_length[13]|is_natural_no_zero',
+        'email' => 'required|valid_email',
+        'contacto' => 'required|min_length[3]|max_length[100]',
+    ];
 }

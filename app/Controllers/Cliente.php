@@ -8,21 +8,30 @@ class Cliente extends BaseController
 {
     public function new()
     {
-        return view('cliente/new');
+        // session();
+        $validation = \Config\Services::validation();
+        var_dump($validation->listErrors());
+        return view('cliente/new', ['validation' => $validation]);
     }
 
     public function create()
     {
         $cliente = new ClienteModel();
-        $cliente->insert([
-            'nombre' => $this->request->getPost('nombre'),
-            'rfc' => $this->request->getPost('rfc'),
-            'direccion' => $this->request->getPost('direccion'),
-            'email' => $this->request->getPost('email'),
-            'contacto' => $this->request->getPost('contacto'),
 
-        ]);
+        // Validaciones
+        if($this->validate('cliente')){
+            $cliente->insert([
+                'nombre' => $this->request->getPost('nombre'),
+                'rfc' => $this->request->getPost('rfc'),
+                'direccion' => $this->request->getPost('direccion'),
+                'email' => $this->request->getPost('email'),
+                'contacto' => $this->request->getPost('contacto'),
+    
+            ]);
+            return 'Validacion e insersión correcta';
+        }
         
-        return 'Peticion POST Cliente';
+        return redirect()->back()->withInput();
+        
     }
 }
