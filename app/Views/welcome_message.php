@@ -269,7 +269,7 @@
                 <li class="menu-item hidden"><a href="" target="">Quienes somos</a></li>
                 <li class="menu-item hidden"><a href="" target="">Productos</a></li>
                 <li class="menu-item hidden"><a href="" target="">Contacto</a></li>
-                <li class="menu-item hidden"><a href="" target="">Vendedores</a></li>
+                <li class="menu-item hidden"><a href="<?= base_url('dashboard') ?>" target="">Vendedores</a></li>
             </ul>
         </div>
 
