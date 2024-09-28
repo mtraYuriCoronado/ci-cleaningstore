@@ -11,7 +11,7 @@ class Cliente extends BaseController
 
     public function create()
     {
-        echo $this->request->getPost('name');
+        echo $this->request->getPost('nombre');
         return 'Peticion POST Cliente';
     }
 }
