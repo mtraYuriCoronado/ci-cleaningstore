@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ClienteModel;
+
 class Cliente extends BaseController
 {
     public function new()
@@ -11,7 +13,16 @@ class Cliente extends BaseController
 
     public function create()
     {
-        echo $this->request->getPost('nombre');
+        $cliente = new ClienteModel();
+        $cliente->insert([
+            'nombre' => $this->request->getPost('nombre'),
+            'rfc' => $this->request->getPost('rfc'),
+            'direccion' => $this->request->getPost('direccion'),
+            'email' => $this->request->getPost('email'),
+            'contacto' => $this->request->getPost('contacto'),
+
+        ]);
+        
         return 'Peticion POST Cliente';
     }
 }
