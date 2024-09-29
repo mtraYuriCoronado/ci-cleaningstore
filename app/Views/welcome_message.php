@@ -6,7 +6,7 @@
     <title>Tienda de Productos de Limpieza</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="/favicon2.ico">
+    <link rel="shortcut icon" type="image/png" href="<?php echo site_url('/favicon2.ico'); ?>">
 
     <!-- STYLES -->
 
@@ -257,6 +257,8 @@
 </head>
 
 <body>
+    <?= base_url(); ?>
+    <?= site_url(); ?>
 
     <!-- HEADER: MENU + HEROE SECTION -->
     <header>
