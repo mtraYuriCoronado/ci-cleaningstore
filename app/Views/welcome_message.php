@@ -263,7 +263,7 @@
 
         <div class="menu">
             <ul>
-                <li class="logo"><a href="https://codeigniter.com" target="_blank"><img src="/logo-ilje.png" alt="" height="60"></a></li>
+                <li class="logo"><a href="<?= base_url() ?>" target="_blank"><img src="/logo-ilje.png" alt="" height="60"></a></li>
                 <li class="menu-toggle"><button id="menuToggle">&#9776;</button></li>
                 <li class="menu-item hidden"><a href="#">Inicio</a></li>
                 <li class="menu-item hidden"><a href="" target="">Quienes somos</a></li>

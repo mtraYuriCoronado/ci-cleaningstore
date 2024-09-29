@@ -48,7 +48,7 @@
 <body>
     <h1>Crear nuevo cliente</h1>
     <?= $validation->listErrors(); ?>
-    <form action="<?= base_url() ?>cliente" method="post">
+    <form action="<?= base_url('cliente') ?>" method="post">
         <div>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" value="Yeyo">
