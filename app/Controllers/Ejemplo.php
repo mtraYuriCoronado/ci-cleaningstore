@@ -6,6 +6,10 @@ class Ejemplo extends BaseController
 {
     public function index(): string
     {
-        return view('ejemplo/index');
+        $data = [
+            "title" => "Ejemplo1",
+            "subtitle" => "Subtitulo de ejemplo",
+        ];
+        return view('ejemplo/index', $data);
     }
 }
