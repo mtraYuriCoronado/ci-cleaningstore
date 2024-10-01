@@ -10,8 +10,13 @@ class Cliente extends BaseController
     {
         // session();
         $validation = \Config\Services::validation();
-        var_dump($validation->listErrors());
-        return view('cliente/new', ['validation' => $validation]);
+        // var_dump($validation->listErrors());
+        $data = [
+            'page_title' => 'Clientes',
+            'form_title' => 'Agregar nuevo cliente',
+            'validation' => $validation,
+        ];
+        return view('cliente/new', $data);
     }
 
     public function create()

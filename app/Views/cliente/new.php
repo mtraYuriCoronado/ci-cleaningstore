@@ -1,82 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('templates/admin_template'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear nuevo Cliente</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        h1{
-            text-align: center;
-        }
-        form {
-            margin: 0 auto;
-            width: 70%;
-            background-color: lightgray;
-            padding: 1em;
-            border-radius: .5em;
-            box-shadow: 5px 5px 5px grey;;
-        }
-        form div {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            margin-bottom: .5em;
-        }
+<!-- Estilos -->
+<?= $this->section('css'); ?>
+<link rel="stylesheet" href="<?= site_url('css/cliente/estilo_clientes.css'); ?>">
+<?= $this->endSection(); ?>
 
-        form div:last-child{
-            margin-top: 2em;
-        }
 
-        label, input, select, textarea{
-            padding: .2em 0;
-            border-radius: .5em;
-            border-width: 0;
-        }
-        input[type="submit"]{
-            padding: .5em;
-            background-color: grey;
-            color: white;
-        }
-    </style>
-</head>
+<!-- JavaScript -->
+<?= $this->section('js'); ?>
 
-<body>
-    <h1>Crear nuevo cliente</h1>
-    <?= $validation->listErrors(); ?>
-    <form action="<?= base_url('cliente') ?>" method="post">
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" value="Yeyo">
-        </div>
-        <div>
-            <label for="rfc">RFC:</label>
-            <input type="text" name="rfc" value="YEYE950214YV5">
-        </div>
-        <div>
-            <label for="direccion">Dirección:</label>
-            <input type="text" name="direccion" value="Simon Bolivear 25">
-        </div>
-        <div>
-            <label for="telefono">Teléfono:</label>
-            <input type="text" name="telefono" value="8345689475">
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" name="email" value="yeyo@gmail.com">
-        </div>
-        <div>
-            <label for="contacto">Nombre del contacto:</label>
-            <input type="text" name="contacto" value="andrea">
-        </div>
-        <div>
-            <input type="submit" value="Enviar">
-        </div>
-    </form>
-</body>
+<?= $this->endSection(); ?>
 
-</html>
+
+<!-- Titulo de la página -->
+<?= $this->section('titulo'); ?>
+<?= esc($page_title) ?>
+<?= $this->endSection(); ?>
+
+
+<!-- Camino de migas -->
+<?= $this->section('breadcrumb'); ?>
+
+<?= $this->endSection(); ?>
+
+
+<!-- Contenido de la página -->
+<?= $this->section('content'); ?>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title"><?= esc($form_title) ?></h3>
+            </div>
+            <!-- /.card-header -->
+
+            <!-- //$validation->listErrors();  -->
+
+            <!-- form start -->
+            <form action="<?= base_url('cliente') ?>" method="post">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese cliente" name="nombre" value="Yeyo">
+                    </div>
+                    <div class="form-group">
+                        <label for="rfc">RFC</label>
+                        <input type="text" class="form-control" id="rfc" placeholder="Ingrese el RFC" name="rfc" value="YEYE950214YV5">
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese dirección" name="direccion" value="Simon Bolivear 25">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" placeholder="Ingrese teléfono" name="telefono" value="8345689475">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese email" name="email" value="yeyo@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contacto">Nombre del contacto</label>
+                        <input type="text" class="form-control" id="contacto" placeholder="Ingrese nombre de contacto para ventas" name="contacto" value="Andrew">
+                    </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.card -->
+    </div>
+</section>
+
+<?= $this->endSection(); ?>

@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    width: 70%;
+    background-color: lightgray;
+    padding: 1em;
+    border-radius: .5em;
+    box-shadow: 5px 5px 5px grey;
+    ;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+form div:last-child {
+    margin-top: 2em;
+}
+
+label,
+input,
+select,
+textarea {
+    padding: .2em 0;
+    border-radius: .5em;
+    border-width: 0;
+}
+
+input[type="submit"] {
+    padding: .5em;
+    background-color: grey;
+    color: white;
+}
