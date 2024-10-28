@@ -8,7 +8,11 @@ class Cliente extends BaseController
 {
     public function index(): string
     {
-        return view('cliente/index');
+        $data = [
+            "title" => "Clientes",
+            "subtitle" => "Listado de clientes",
+        ];
+        return view('ejemplo/index', $data);
     } 
 
     public function new()

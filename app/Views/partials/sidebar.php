@@ -29,7 +29,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="<?= site_url('ejemplo') ?>" class="nav-link active">
+              <a href="<?= site_url('cliente') ?>" class="nav-link active">
                 <i class="fas nav-icon fa-list"></i>
                 <p>Listado de clientes</p>
               </a>
