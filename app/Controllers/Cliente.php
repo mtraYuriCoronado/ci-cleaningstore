@@ -6,6 +6,11 @@ use App\Models\ClienteModel;
 
 class Cliente extends BaseController
 {
+    public function index(): string
+    {
+        return view('cliente/index');
+    } 
+
     public function new()
     {
         // session();
@@ -31,7 +36,6 @@ class Cliente extends BaseController
                 'direccion' => $this->request->getPost('direccion'),
                 'email' => $this->request->getPost('email'),
                 'contacto' => $this->request->getPost('contacto'),
-    
             ]);
             return 'Validacion e insersión correcta';
         }
